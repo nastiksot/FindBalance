@@ -557,4 +557,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6889750ef73846d6abd4dee6849492dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGameButton: {fileID: 2028175330180030642}
+  restartGameButton: {fileID: 2028175330180030642}
+  exitGameButton: {fileID: 2028175331766030902}

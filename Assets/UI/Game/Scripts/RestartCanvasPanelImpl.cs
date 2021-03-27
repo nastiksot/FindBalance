@@ -4,16 +4,18 @@ using UnityEngine.UI;
 
 public class RestartCanvasPanelImpl : MonoBehaviour, RestartCanvasPanel
 {
-    [SerializeField] private Button startGameButton;
+    [SerializeField] private Button restartGameButton;
+    [SerializeField] private Button exitGameButton;
     private Action onButtonClick;
 
     public void Init()
     {
-        startGameButton.onClick.AddListener(() =>
+        restartGameButton.onClick.AddListener(() =>
         {
             onButtonClick.Invoke();
             Destroy(gameObject);
         });
+        exitGameButton.onClick.AddListener(Application.Quit);
     }
 
     public void OnButtonClick(Action onButtonClick)

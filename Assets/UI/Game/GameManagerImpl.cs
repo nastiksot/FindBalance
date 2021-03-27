@@ -9,24 +9,24 @@ public class GameManagerImpl : MonoBehaviour
     [SerializeField] private GameObject startGameCanvasPrefab;
     [SerializeField] private GameObject restartGameCanvasPrefab;
     [SerializeField] private GameObject stopWatchPrefab;
- 
+  
     private RestartCanvasPanel restartCanvasPanel;
     private StartCanvasPanel startCanvasPanel;
     private GamePanel gamePanel;
     private StopWatch stopWatch;
+    private bool isRestart;
 
     public void Start()
     {
-        Init();
+        Init(); 
     }
 
     void Init()
-    {
+    { 
         GameObject gamePanelObject;
-        GameObject startGameCanvasObject;
-        GameObject restartGameCanvasObject; 
+        GameObject restartGameCanvasObject;
         GameObject stopWatchObjects;
-        
+        GameObject startGameCanvasObject;
         gamePanelObject = Instantiate(gamePanelPrefab, transform);
         gamePanel = gamePanelObject.GetComponent<GamePanelImpl>();
         gamePanel.Init();
@@ -58,12 +58,10 @@ public class GameManagerImpl : MonoBehaviour
 
         restartCanvasPanel.OnButtonClick(() =>
         {
-            gamePanel.SetJoystickCondition(true);
-            
-            Init();  
+            Init();
             Destroy(gamePanelObject);
             Destroy(startGameCanvasObject);
-            Destroy(restartGameCanvasObject); 
+            Destroy(restartGameCanvasObject);
             Destroy(stopWatchObjects);
         });
     }
