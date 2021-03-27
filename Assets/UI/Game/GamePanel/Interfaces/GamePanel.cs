@@ -3,6 +3,7 @@
 public interface GamePanel
 {
     void OnBallFallDown(Action onBallFallDownListener);
-    void SetStartCondition();
+    void SetJoystickCondition(bool state);
+    
     void Init();
 }

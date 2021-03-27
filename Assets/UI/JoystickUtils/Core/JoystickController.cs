@@ -41,13 +41,13 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IPointerUp
             return;
         }
 
-        if (transform.root.GetComponent<Canvas>() != null)
+        if (transform.parent.GetComponent<Canvas>() != null)
         {
-            m_Canvas = transform.root.GetComponent<Canvas>();
+            m_Canvas = transform.parent.GetComponent<Canvas>();
         }
-        else if (transform.root.GetComponentInChildren<Canvas>() != null)
+        else if (transform.parent.GetComponentInChildren<Canvas>() != null)
         {
-            m_Canvas = transform.root.GetComponentInChildren<Canvas>();
+            m_Canvas = transform.parent.GetComponentInChildren<Canvas>();
         }
         else
         {

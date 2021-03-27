@@ -14,18 +14,17 @@ public class GamePanelImpl : MonoBehaviour, GamePanel
     private Action onBallFallDownListener;
 
     public void Init()
-    { 
+    {
         platformController = platformObject.GetComponent<PlatformControllerImpl>();
         ballBehaviour = ballObject.GetComponent<BallBehaviourImpl>();
-        ballBehaviour.OnBallFall(() =>
-        {
-            onBallFallDownListener.Invoke();
-        });
+        ballBehaviour.OnBallFall(() => { onBallFallDownListener.Invoke(); });
     }
 
-    public void SetStartCondition()
+   
+
+    public void SetJoystickCondition(bool state)
     {
-        platformController.SetStartCondition(true);
+        platformController.SetStartCondition(state);
     }
 
     public void OnBallFallDown(Action onBallFallDownListener)

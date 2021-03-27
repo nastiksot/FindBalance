@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 2028175331615278669}
   - component: {fileID: 2028175331615278707}
   - component: {fileID: 2028175331615278706}
+  - component: {fileID: 3620244395637356616}
   m_Layer: 0
   m_Name: PopUpPanel
   m_TagString: Untagged
@@ -254,6 +255,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3620244395637356616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028175331615278668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a3e4e17d29c434cb7153ea4280b264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2028175331766030898
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,4 +557,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6889750ef73846d6abd4dee6849492dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGameButton: {fileID: 2028175330180030642}
+  restartGameButton: {fileID: 2028175330180030642}
+  exitGameButton: {fileID: 2028175331766030902}
