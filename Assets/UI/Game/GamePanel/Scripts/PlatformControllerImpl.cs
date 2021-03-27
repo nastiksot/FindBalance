@@ -3,7 +3,7 @@
 public class PlatformControllerImpl : MonoBehaviour
 {
     [SerializeField] private JoystickController joystickController;
-    private const float abstractSpeed = 0.1f;
+    private const float abstractSpeed = 0.05f;
     private bool isStarted = false;
 
     void Update()

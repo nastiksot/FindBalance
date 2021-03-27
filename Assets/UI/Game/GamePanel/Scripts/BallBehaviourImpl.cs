@@ -7,7 +7,7 @@ public class BallBehaviourImpl : MonoBehaviour, BallBehaviour
 
     private void Update()
     {
-        if (gameObject.transform.position.y < -50)
+        if (gameObject.transform.position.y < -20)
         {
             Destroy(this.gameObject);
             ballPositionListener.Invoke();
