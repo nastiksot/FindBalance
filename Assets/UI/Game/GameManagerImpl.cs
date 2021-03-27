@@ -30,25 +30,33 @@ public class GameManagerImpl : MonoBehaviour
         gamePanelObject = Instantiate(gamePanelPrefab, transform);
         gamePanel = gamePanelObject.GetComponent<GamePanelImpl>();
         gamePanel.Init();
-
-        startGameCanvasObject = Instantiate(startGameCanvasPrefab, transform);
-        startCanvasPanel = startGameCanvasObject.GetComponentInParent<StartCanvasPanelImpl>();
-        startCanvasPanel.Init();
-
+        
         stopWatchObjects = Instantiate(stopWatchPrefab, transform);
         stopWatch = stopWatchObjects.GetComponentInChildren<StopWatchImpl>();
-
+        
+        if (!isRestart)
+        {
+            startGameCanvasObject = Instantiate(startGameCanvasPrefab, transform);
+            startCanvasPanel = startGameCanvasObject.GetComponentInParent<StartCanvasPanelImpl>();
+            startCanvasPanel.Init();
+            startCanvasPanel.OnButtonClick(() =>
+            {
+                Destroy(startGameCanvasObject);
+                gamePanel.SetJoystickCondition(true);
+                stopWatch.BeginTimer();
+            });
+        }
+        else
+        {
+            gamePanel.SetJoystickCondition(true);
+            stopWatch.BeginTimer();
+        } 
+        
         restartGameCanvasObject = Instantiate(restartGameCanvasPrefab, transform);
         restartCanvasPanel = restartGameCanvasObject.GetComponent<RestartCanvasPanelImpl>();
         restartCanvasPanel.Init();
         restartGameCanvasObject.SetActive(false);
-
-        startCanvasPanel.OnButtonClick(() =>
-        {
-            gamePanel.SetJoystickCondition(true);
-            stopWatch.BeginTimer();
-        });
-
+ 
         gamePanel.OnBallFallDown(() =>
         {
             gamePanel.SetJoystickCondition(false);
@@ -58,9 +66,9 @@ public class GameManagerImpl : MonoBehaviour
 
         restartCanvasPanel.OnButtonClick(() =>
         {
+            isRestart = true;
             Init();
-            Destroy(gamePanelObject);
-            Destroy(startGameCanvasObject);
+            Destroy(gamePanelObject); 
             Destroy(restartGameCanvasObject);
             Destroy(stopWatchObjects);
         });
