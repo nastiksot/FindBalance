@@ -8,13 +8,13 @@ public class StartCanvasPanelImpl : MonoBehaviour, StartCanvasPanel
 {
     [SerializeField] private Button startGameButton;
     private Action onButtonClick;
-    
+
     public void Init()
     {
         startGameButton.onClick.AddListener(() =>
         {
             onButtonClick.Invoke();
-            Destroy(gameObject); 
+            Destroy(gameObject);
         });
     }
 
@@ -22,5 +22,4 @@ public class StartCanvasPanelImpl : MonoBehaviour, StartCanvasPanel
     {
         this.onButtonClick = onButtonClick;
     }
-
 }
