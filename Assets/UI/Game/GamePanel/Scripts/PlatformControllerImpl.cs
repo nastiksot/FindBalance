@@ -13,7 +13,7 @@ public class PlatformControllerImpl : MonoBehaviour
             Vector3 qa = new Vector3();
             qa.x = joystickController.Vertical * abstractSpeed;
             qa.y = joystickController.Horizontal * abstractSpeed;
-            Quaternion translate = new Quaternion(qa.x, 0.0f, qa.y, 1f);
+            Quaternion translate = new Quaternion(qa.x, 0, qa.y, 1f);
             transform.rotation = translate;
         }
     }

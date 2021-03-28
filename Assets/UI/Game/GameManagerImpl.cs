@@ -22,7 +22,8 @@ public class GameManagerImpl : MonoBehaviour
     }
 
     void Init()
-    { 
+    {
+        Time.timeScale = 0;
         GameObject gamePanelObject;
         GameObject restartGameCanvasObject;
         GameObject stopWatchObjects;
@@ -41,6 +42,7 @@ public class GameManagerImpl : MonoBehaviour
             startCanvasPanel.Init();
             startCanvasPanel.OnButtonClick(() =>
             {
+                Time.timeScale = 1;
                 Destroy(startGameCanvasObject);
                 gamePanel.SetJoystickCondition(true);
                 stopWatch.BeginTimer();
@@ -48,6 +50,7 @@ public class GameManagerImpl : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 1;
             gamePanel.SetJoystickCondition(true);
             stopWatch.BeginTimer();
         } 
