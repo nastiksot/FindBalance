@@ -9,6 +9,6 @@ Stopwatch will start timing when the game is run
 
 If ball falls from the platform we need: reset timer, show game restart UI.
 
-Download apk: https://drive.google.com/file/d/1fPer_vv0gUTjozd8OpLT1Q_Dx-yl1q7V/view?usp=sharing
+Download apk: https://drive.google.com/file/d/1LFdPo0PQfnPdsdQekrpvIY0DPf_evcD4/view?usp=sharing
 
-![GameGif](https://user-images.githubusercontent.com/65322856/112736837-cb966780-8f66-11eb-84ab-65a09cf76009.gif)
+![GameGif](https://user-images.githubusercontent.com/65322856/112741612-08c31f80-8f90-11eb-966c-441acb4d0cbc.gif)
