@@ -432,6 +432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamePanelPrefab: {fileID: 6100408951334232613, guid: 752648f0649601f4182414243bd6cd86,
     type: 3}
+  gameTennisPanelPrefab: {fileID: 6100408951334232613, guid: 57a44803e1c53e94eb223033927df613,
+    type: 3}
   startGameCanvasPrefab: {fileID: 8366974292803550682, guid: 4e934280f6a52944bb8e1e059612a780,
     type: 3}
   restartGameCanvasPrefab: {fileID: 2028175331866603100, guid: 1007ae7403b51214dbf256967441ef97,
