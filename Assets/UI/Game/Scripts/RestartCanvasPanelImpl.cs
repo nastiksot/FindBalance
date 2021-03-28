@@ -17,6 +17,7 @@ public class RestartCanvasPanelImpl : MonoBehaviour, RestartCanvasPanel
             onButtonClick.Invoke();
             Destroy(gameObject);
         });
+        
         exitGameButton.onClick.AddListener(Application.Quit);
 
         backToMenuGameButton.onClick.AddListener(() =>

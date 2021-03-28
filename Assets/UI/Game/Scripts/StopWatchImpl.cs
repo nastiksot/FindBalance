@@ -22,7 +22,7 @@ public class StopWatchImpl : MonoBehaviour, StopWatch
     float milliseconds;
     float seconds;
     float minutes;
- 
+
     void Update()
     {
         if (isStarted)
@@ -31,8 +31,8 @@ public class StopWatchImpl : MonoBehaviour, StopWatch
 
             UpdateTime();
             CalculateTime();
-            if (milliseconds.ToString().Length<2)return;
-            
+            if (milliseconds.ToString().Length < 2) return;
+
             timerTextMeshObject.text = (minutes.ToString("00") + " : " + seconds.ToString("00") + " : " + milliseconds.ToString().Substring(0, 2));
         }
         else if (!isStarted)
@@ -70,16 +70,15 @@ public class StopWatchImpl : MonoBehaviour, StopWatch
         }
     }
 
-  
 
-    public void ResetTimer()
+    public void StopTimer()
     {
         elapsedRunningTime = 0f;
         runningStartTime = 0f;
         pauseStartTime = 0f;
         elapsedPausedTime = 0f;
         totalElapsedPausedTime = 0f;
-        isStarted = false; 
+        isStarted = false;
     }
 
     private int GetMinutes()
@@ -96,7 +95,7 @@ public class StopWatchImpl : MonoBehaviour, StopWatch
     {
         return (float) (elapsedRunningTime - Math.Truncate(elapsedRunningTime));
     }
-    
+
     public void BeginTimer()
     {
         if (!isStarted)
@@ -105,7 +104,4 @@ public class StopWatchImpl : MonoBehaviour, StopWatch
             isStarted = true;
         }
     }
- 
-   
-
 }

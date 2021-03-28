@@ -70,36 +70,28 @@ public class GameManagerImpl : MonoBehaviour
 
         gamePanel.OnBallFallDown(() =>
         {
-            gamePanel.SetJoystickCondition(false);
             restartGameCanvasObject.SetActive(true);
-            stopWatch.ResetTimer();
+            stopWatch.StopTimer();
         });
 
         restartCanvasPanel.OnBackToMenuButtonClick(() =>
         {
             isRestart = false;
-            ResetToDefault();
+            Init();
             DestroyAll(startGameCanvasObject, gamePanelObject, restartGameCanvasObject, stopWatchObjects);
         });
 
         restartCanvasPanel.OnButtonClick(() =>
         {
             isRestart = true;
-            ResetToDefault();
+            Init();
             DestroyAll(startGameCanvasObject, gamePanelObject, restartGameCanvasObject, stopWatchObjects);
         });
-    }
-
-    private void ResetToDefault()
-    {
-        Init();
-        gamePanel.SetJoystickCondition(true);
     }
 
     private void RunGame()
     {
         Time.timeScale = 1;
-        gamePanel.SetJoystickCondition(true);
         stopWatch.BeginTimer();
     }
 

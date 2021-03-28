@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bd81abee695e749a5a7659808e003a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickObject: {fileID: 6100408952619005634}
   ballObject: {fileID: 1237296185375186575}
   platformObject: {fileID: 6100408950616983576}
 --- !u!1 &6100408952618799196

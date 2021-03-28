@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface StopWatch
 {
-    void BeginTimer(); 
-    void ResetTimer();
+    void BeginTimer();
+    void StopTimer();
 }

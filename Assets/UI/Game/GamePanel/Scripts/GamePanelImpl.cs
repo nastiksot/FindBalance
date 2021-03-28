@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class GamePanelImpl : MonoBehaviour, GamePanel
 {
-    [SerializeField] private GameObject joystickObject; 
     [SerializeField] private GameObject ballObject;
     [SerializeField] private GameObject platformObject;
-    
+
     private PlatformControllerImpl platformController;
     private BallBehaviour ballBehaviour;
     private Action onBallFallDownListener;
@@ -20,16 +19,8 @@ public class GamePanelImpl : MonoBehaviour, GamePanel
         ballBehaviour.OnBallFall(() => { onBallFallDownListener.Invoke(); });
     }
 
-   
-
-    public void SetJoystickCondition(bool state)
-    {
-        platformController.SetStartCondition(state);
-    }
-
     public void OnBallFallDown(Action onBallFallDownListener)
     {
         this.onBallFallDownListener = onBallFallDownListener;
     }
-
 }
