@@ -1,5 +1,4 @@
-# QSTest
-
+# FindBalance
 
 Android/IOS application have features:
 
