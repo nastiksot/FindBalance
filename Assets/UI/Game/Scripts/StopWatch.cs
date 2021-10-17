@@ -44,6 +44,9 @@ namespace UI.Game.Scripts
             }
         }
 
+        /// <summary>
+        /// Update time
+        /// </summary>
         private void UpdateTime()
         {
             elapsedMilliseconds = GetMilliseconds();
@@ -52,6 +55,9 @@ namespace UI.Game.Scripts
             milliseconds = elapsedMilliseconds * 1000;
         }
 
+        /// <summary>
+        /// Calculate time
+        /// </summary>
         private void CalculateTime()
         {
             if (elapsedSeconds >= 60)
@@ -73,7 +79,9 @@ namespace UI.Game.Scripts
             }
         }
 
-
+        /// <summary>
+        /// Stop timer
+        /// </summary>
         public void StopTimer()
         {
             elapsedRunningTime = 0f;
@@ -84,21 +92,36 @@ namespace UI.Game.Scripts
             isStarted = false;
         }
 
+        /// <summary>
+        /// Get minutes
+        /// </summary>
+        /// <returns></returns>
         private int GetMinutes()
         {
             return (int) (elapsedRunningTime / 60f);
         }
 
+        /// <summary>
+        /// Get seconds
+        /// </summary>
+        /// <returns></returns>
         private int GetSeconds()
         {
             return (int) (elapsedRunningTime);
         }
 
+        /// <summary>
+        /// Get milliseconds
+        /// </summary>
+        /// <returns></returns>
         private float GetMilliseconds()
         {
             return (float) (elapsedRunningTime - Math.Truncate(elapsedRunningTime));
         }
 
+        /// <summary>
+        /// Begin timer
+        /// </summary>
         public void BeginTimer()
         {
             if (isStarted) return;
@@ -106,6 +129,9 @@ namespace UI.Game.Scripts
             isStarted = true;
         }
         
+        /// <summary>
+        /// Destroy stopWatch prefab 
+        /// </summary>
         public void Destroy()
         {
             Destroy(gameObject);

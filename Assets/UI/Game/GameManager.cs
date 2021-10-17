@@ -5,24 +5,22 @@ namespace UI.Game
 {
     public class GameManager : MonoBehaviour
     {
-        [Header("Prefabs")] [SerializeField] private GameLevel gameLevelPrefab;
+        [Header("Prefabs")] 
+        [SerializeField] private GameLevel gameLevelPrefab;
         [SerializeField] private GameLevel gameTennisLevelPrefab;
 
-        [Space(3f), Header("Canvases")] [SerializeField]
-        private StartCanvasPanel startGameCanvasPrefab;
-
+        [Space(3f), Header("Canvases")] 
+        [SerializeField] private StartCanvasPanel startGameCanvasPrefab;
         [SerializeField] private RestartCanvas restartGameCanvasPrefab;
 
-        [Space(3f), Header("StopWatch")] [SerializeField]
-        private StopWatch stopWatchPrefab;
+        [Space(3f), Header("StopWatch")]
+        [SerializeField] private StopWatch stopWatchPrefab;
 
-        private StopWatch instantiatedStopWatch;
-        private CanvasGroup instantiatedJoystick;
+        private StopWatch instantiatedStopWatch; 
         private RestartCanvas instantiatedRestartCanvas;
         private StartCanvasPanel instantiatedStartCanvas;
         private GameLevel gameLevel;
-
-        private bool isRestart;
+ 
         private bool newStatus;
 
         public void Start()
@@ -30,6 +28,9 @@ namespace UI.Game
             Initialize();
         }
 
+        /// <summary>
+        /// Initialize game
+        /// </summary>
         private void Initialize()
         {
             Time.timeScale = 0;
@@ -41,9 +42,11 @@ namespace UI.Game
             instantiatedStartCanvas.OnGameStarted += StartGame;
             gameLevel.OnBallFall += StopGame;
             instantiatedStartCanvas.OnChangeSkin += OnChangeSkin;
- 
         }
 
+        /// <summary>
+        /// Change platform skin
+        /// </summary>
         private void OnChangeSkin()
         {
             instantiatedStartCanvas.GetGamePrefabStatus(status =>
@@ -56,6 +59,9 @@ namespace UI.Game
             });
         }
 
+        /// <summary>
+        /// Start game 
+        /// </summary>
         private void StartGame()
         {
             Time.timeScale = 1;
@@ -63,6 +69,9 @@ namespace UI.Game
             gameLevel.SetJoystickVisibility(true);
         }
 
+        /// <summary>
+        /// Stop game
+        /// </summary>
         private void StopGame()
         {
             Time.timeScale = 0;
@@ -70,6 +79,9 @@ namespace UI.Game
             instantiatedStopWatch.StopTimer();
         }
 
+        /// <summary>
+        /// Initialize reset canvas 
+        /// </summary>
         private void InitializeRestartCanvas()
         {
             instantiatedRestartCanvas = Instantiate(restartGameCanvasPrefab, transform);
@@ -77,20 +89,35 @@ namespace UI.Game
             instantiatedRestartCanvas.OnBackToMenu += OnBackToMenu;
         }
 
+        /// <summary>
+        /// Destroy instantiated canvases and reinitialize game
+        /// </summary>
         private void OnBackToMenu()
         {
-            DestroyOnRestart(gameLevel, instantiatedStopWatch,instantiatedRestartCanvas);
+            DestroyOnRestart(gameLevel, instantiatedStopWatch, instantiatedRestartCanvas);
             Initialize();
         }
 
-        private void DestroyOnRestart(GameLevel gameLevelObject,  StopWatch stopWatchObjects, RestartCanvas restartGameCanvasObject)
+        /// <summary>
+        /// Destroy canvases on restart
+        /// </summary>
+        /// <param name="gameLevelObject"></param>
+        /// <param name="stopWatchObjects"></param>
+        /// <param name="restartGameCanvasObject"></param>
+        private void DestroyOnRestart(GameLevel gameLevelObject, StopWatch stopWatchObjects, RestartCanvas restartGameCanvasObject)
         {
             gameLevelObject.Destroy();
             stopWatchObjects.Destroy();
             restartGameCanvasObject.Destroy();
         }
 
-        private void DestroyOnChangeSkin(GameLevel gameLevelObject, StopWatch stopWatchObjects,StartCanvasPanel startCanvasPanel)
+        /// <summary>
+        /// Destroy canvases on change skin platform
+        /// </summary>
+        /// <param name="gameLevelObject"></param>
+        /// <param name="stopWatchObjects"></param>
+        /// <param name="startCanvasPanel"></param>
+        private void DestroyOnChangeSkin(GameLevel gameLevelObject, StopWatch stopWatchObjects, StartCanvasPanel startCanvasPanel)
         {
             gameLevelObject.Destroy();
             stopWatchObjects.Destroy();

@@ -11,6 +11,9 @@ namespace UI.Game.Scripts.Joystick
         public CanvasGroup JoystickCanvas => joystickCanvas;
         public JoystickController JoystickController => joystickController;
 
+        /// <summary>
+        /// Reset joystick position to center
+        /// </summary>
         public void ResetJoystickCenter()
         {
             joystickController.ResetJoystickPosition();

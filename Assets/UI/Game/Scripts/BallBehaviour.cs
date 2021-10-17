@@ -19,6 +19,9 @@ namespace UI.Game.Scripts
             onBallFall?.Invoke(); 
         }
 
+        /// <summary>
+        /// Reset ball rigidbody
+        /// </summary>
         public void ResetBallRigidbody()
         {
             ballRigidbody.velocity = Vector3.zero;

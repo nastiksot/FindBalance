@@ -32,16 +32,16 @@ namespace UI.Game.Scripts
                 Destroy(gameObject);
             });
             
-            backToMenuGameButton.onClick.AddListener(() =>
-            {
-                onBackToMenu?.Invoke();
-            });
+            backToMenuGameButton.onClick.AddListener(() => { onBackToMenu?.Invoke(); });
         
             exitGameButton.onClick.AddListener(Application.Quit);
 
             
         }
  
+        /// <summary>
+        /// Destroy reset canvas
+        /// </summary>
         public void Destroy()
         {
             Destroy(gameObject);

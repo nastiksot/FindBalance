@@ -26,17 +26,24 @@ namespace UI.Game.Scripts
             SetJoystickVisibility(false);
             ballBehaviour.OnBallFall += () =>
             { 
-                ResetGameLevel().SetJoystickVisibility(false);
+                ResetPosition().SetJoystickVisibility(false);
             };
         }
 
-        public void CachePosition()
+        /// <summary>
+        /// Cache platform and ball position on start
+        /// </summary>
+        private void CachePosition()
         {
             ballPosition = ballBehaviour.transform.position;
             platformPosition = platformTransform.position;
         }
 
-        public GameLevel ResetGameLevel()
+        /// <summary>
+        /// Reset joystick and ball position
+        /// </summary>
+        /// <returns></returns>
+        private GameLevel ResetPosition()
         {
             joystickHolder.ResetJoystickCenter();
             ballBehaviour.ResetBallRigidbody();
@@ -44,12 +51,19 @@ namespace UI.Game.Scripts
             return this;
         }
 
- 
+        /// <summary>
+        /// Set joystick canvas visibility
+        /// </summary>
+        /// <param name="state"></param>
         public void SetJoystickVisibility(bool state)
         {
             var joystickCanvas = joystickHolder.JoystickCanvas;
             CanvasTool.State(ref joystickCanvas, state);
         } 
+        
+        /// <summary>
+        /// Destroy level platform
+        /// </summary>
         public void Destroy()
         {
             Destroy(gameObject);
