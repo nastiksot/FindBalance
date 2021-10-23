@@ -49,8 +49,6 @@ MonoBehaviour:
   ballBehaviour: {fileID: 1237296185375186574}
   platformTransform: {fileID: 6527215543688568017}
   joystickHolder: {fileID: 1638782774302588349}
-  ballPosition: {x: 11, y: 33, z: 5.5}
-  platformPosition: {x: 0, y: 20.42, z: 0}
 --- !u!114 &4314983927977238950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,8 +77,18 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 726079139407410118, guid: f49f097561511dd499970e7f53740fdd,
         type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 726079139407410118, guid: f49f097561511dd499970e7f53740fdd,
+        type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 726079139407410118, guid: f49f097561511dd499970e7f53740fdd,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5722168504380414926, guid: f49f097561511dd499970e7f53740fdd,
         type: 3}

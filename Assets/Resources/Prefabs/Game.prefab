@@ -112,7 +112,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &6100408950616983581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,8 +175,6 @@ MonoBehaviour:
   ballBehaviour: {fileID: 1237296185375186574}
   platformTransform: {fileID: 6100408950616983577}
   joystickHolder: {fileID: 8753505507657471584}
-  ballPosition: {x: 0, y: 40, z: 0}
-  platformPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463314321494412954
 PrefabInstance:
   m_ObjectHideFlags: 0

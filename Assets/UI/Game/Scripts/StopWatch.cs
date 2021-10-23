@@ -7,8 +7,7 @@ namespace UI.Game.Scripts
     public class StopWatch : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI timerTextMeshObject;
-
-        // Update is called once per frame 
+ 
         private float elapsedRunningTime = 0f;
         private float runningStartTime = 0f;
         private float pauseStartTime = 0f;
